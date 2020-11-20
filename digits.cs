@@ -1,6 +1,7 @@
 /* 
  calculates how many numbers of 1, 2, 3 or more digits are
  entered by the user until he/she types “end”.
+ (C) Zeus pass Development environments
  */
 using System;
 
@@ -8,47 +9,47 @@ class digits
 {
 	static void Main()
 	{
-		int one_digit = 0, two_digit= 0, three_digit= 0, more_that4 = 0,converted_string;
-		string condition_finish;
+		int oneDigit = 0, twoDigit= 0, threeDigit= 0, moreThat4 = 0,convertedString;
+		string conditionFinish;
 		
 		Console.Write("insert numbers and when you want to finish type final: ");
-		condition_finish = Console.ReadLine();
+		conditionFinish = Console.ReadLine();
 		
-		while (condition_finish!="end")
+		while (conditionFinish!="end")
 		{
-			converted_string = Convert.ToInt32(condition_finish);
+			convertedString = Convert.ToInt32(conditionFinish);
 			
-			if (converted_string != 0)
+			if (convertedString != 0)
 			{
-				if(converted_string/10 == 0)
+				if(convertedString/10 == 0)
 				{
-					one_digit ++; 
+					oneDigit ++; 
 				} 
 				else 
 				{
-					if (converted_string/100 == 0)
+					if (convertedString/100 == 0)
 					{
-						two_digit ++; 
+						twoDigit ++; 
 					}
 					else
 					{
-						if (converted_string/1000 == 0)
+						if (convertedString/1000 == 0)
 						{
-							three_digit ++; 
+							threeDigit ++; 
 						} 
 						else
 						{
-						more_that4++;  
+						moreThat4++;  
 						}
 					}
 				}									
 			}
 			
-		condition_finish = Console.ReadLine();
+		conditionFinish = Console.ReadLine();
 		
 		}
 		
 		Console.WriteLine("one: {0} two: {1} three: {2} more: {3}",
-			one_digit,	two_digit, three_digit, more_that4); 
+			oneDigit, twoDigit, threeDigit, moreThat4); 
 	}
 }
