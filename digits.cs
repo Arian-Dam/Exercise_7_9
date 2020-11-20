@@ -14,25 +14,40 @@ class digits
 		Console.Write("insert numbers and when you want to finish type final: ");
 		condition_finish = Console.ReadLine();
 		
-		while(condition_finish!="end")
+		while (condition_finish!="end")
 		{
 			converted_string = Convert.ToInt32(condition_finish);
 			
-			if(converted_string != 0)
+			if (converted_string != 0)
 			{
 				if(converted_string/10 == 0)
-					one_digit ++;  
-					else 
-						if (converted_string/100 == 0)
-							two_digit ++; 
-								else
-									if (converted_string/1000 == 0)
-										three_digit ++;  
-										else
-											more_that4++;  
+				{
+					one_digit ++; 
+				} 
+				else 
+				{
+					if (converted_string/100 == 0)
+					{
+						two_digit ++; 
+					}
+					else
+					{
+						if (converted_string/1000 == 0)
+						{
+							three_digit ++; 
+						} 
+						else
+						{
+						more_that4++;  
+						}
+					}
+				}									
 			}
+			
 		condition_finish = Console.ReadLine();
+		
 		}
+		
 		Console.WriteLine("one: {0} two: {1} three: {2} more: {3}",
 			one_digit,	two_digit, three_digit, more_that4); 
 	}
